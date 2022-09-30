@@ -15,15 +15,16 @@ def homepage():
 
 @app.route('/about')
 def about():
-    return render_template('about.html', title='About')
+    return render_template('About.html', title='About')
 
 
 @app.route('/games')
 def games():
     return render_template('games.html', title='Games')
 
-@app.route('/about/user')
-def user():
+@app.route('/about/<user>')
+def user(user):
+    print(user)
     return render_template('user.html', title='User')
 
 @app.route('/register',methods=['POST','GET'])
